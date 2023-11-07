@@ -13,32 +13,32 @@ In this project we will install and set up Fail2Ban to help in preventing and mi
 <h2>Installation and Set-Up walk-through:</h2>
 
 <p align="center">
-After logging in to the server we will need to add the repository for Suricata: <br/>
-<img src="https://i.imgur.com/9QS6kl7.png" height="80%" width="80%" alt="Add Repo"/>
+Fail2ban is already in the Unbuntu repositories so we can install normally using apt: <br/>
+<img src="https://i.imgur.com/nxzvgU2.png" height="80%" width="80%" alt="Intall Fail2ban"/>
 <br />
 <br />
-We will need to run apt-update and then install suricata:  <br/>
-<img src="https://i.imgur.com/FN4hiJQ.png" height="80%" width="80%" alt="Update and Install"/>
+Once the install is completed we will need to navigate to the directory with the config file:  <br/>
+<img src="https://i.imgur.com/T5neE5D.png" height="80%" width="80%" alt="Navigate to config file"/>
 <br />
 <br />
-Once the install is complete we will enable Suricata using systemctl then stop the service temporarily so we can configure it: <br/>
-<img src="https://i.imgur.com/uynGLFe.png" height="80%" width="80%" alt="Enable Suricata"/>
+We will check the first part of the config file to see that since this file could update and be overwritten when Fail2ban updates, we will need to create a .local config: <br/>
+<img src="https://i.imgur.com/wWY1GPW.png" height="80%" width="80%" alt="Inspect config file"/>
 <br />
 <br />
-Next, we will check the default interface we want to monitor on to update the config file. Note the interface is eth0:  <br/>
-<img src="https://i.imgur.com/FfyYKfA.png" height="80%" width="80%" alt="Check Default Interface"/>
+Next, we will copy the contents of jail.conf into a jail.local file so we can create and edit our own config, then open this is nano for editing:  <br/>
+<img src="https://i.imgur.com/016HywT.png" height="80%" width="80%" alt="Create and open config file"/>
 <br />
 <br />
-We will then open the configuration file with nano to edit the configuration:  <br/>
-<img src="https://i.imgur.com/0gW5qQ5.png" height="80%" width="80%" alt="Open Config File"/>
+We will leave some settings at their deafaults but will change the bantime to be 30 minutes:  <br/>
+<img src="https://i.imgur.com/v2Wzufb.png" height="80%" width="80%" alt="Edit config file"/>
 <br />
 <br />
-Next, we will edit the interface to match our system, in this case it is eth0:  <br/>
-<img src="https://i.imgur.com/Dh86zWI.png" height="80%" width="80%" alt="Edit interface in config file"/>
+Next, we will check the default action for fail2ban when it detects an issue, default is to update iptables to block the nefarious IP from the server. Other actions, like email notifications are listed priot to this line and can be added by changing the variable in this line:  <br/>
+<img src="https://i.imgur.com/FBs2I33.png" height="80%" width="80%" alt="Leave default action"/>
 <br />
 <br />
-The rule set will then need to be updated so we have updated rules for Suricata to use to monitor the network:  <br/>
-<img src="https://i.imgur.com/YMIuuYE.png" height="80%" width="80%" alt="Update Suricata Rules"/>
+Then we will enable sshd monitoring by adding a line to the config file:  <br/>
+<img src="https://i.imgur.com/NX34VIw.png" height="80%" width="80%" alt="Enable sshd monitoring"/>
 <br />
 <br />
 Since updating the config and rules we will test the configuration and once successfull will then start the Suricata service:  <br/>
