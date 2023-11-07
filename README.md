@@ -25,15 +25,15 @@ We will check the first part of the config file to see that since this file coul
 <img src="https://i.imgur.com/wWY1GPW.png" height="80%" width="80%" alt="Inspect config file"/>
 <br />
 <br />
-Next, we will copy the contents of jail.conf into a jail.local file so we can create and edit our own config, then open this is nano for editing:  <br/>
+Next, we will copy the contents of jail.conf into a jail.local file so we can create and edit our own config, then open this in nano for editing:  <br/>
 <img src="https://i.imgur.com/016HywT.png" height="80%" width="80%" alt="Create and open config file"/>
 <br />
 <br />
-We will leave some settings at their deafaults but will change the bantime to be 30 minutes:  <br/>
+We will leave some settings at their defaults but will change the bantime to be 30 minutes:  <br/>
 <img src="https://i.imgur.com/v2Wzufb.png" height="80%" width="80%" alt="Edit config file"/>
 <br />
 <br />
-Next, we will check the default action for fail2ban when it detects an issue, default is to update iptables to block the nefarious IP from the server. Other actions, like email notifications are listed priot to this line and can be added by changing the variable in this line:  <br/>
+Next, we will check the default action for fail2ban when it detects an issue, default is to update iptables to block the nefarious IP from the server. Other actions, like email notifications are listed prior to this line and can be added by changing the variable in this line:  <br/>
 <img src="https://i.imgur.com/FBs2I33.png" height="80%" width="80%" alt="Leave default action"/>
 <br />
 <br />
