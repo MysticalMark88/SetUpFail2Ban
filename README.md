@@ -41,24 +41,12 @@ Then we will enable sshd monitoring by adding a line to the config file:  <br/>
 <img src="https://i.imgur.com/NX34VIw.png" height="80%" width="80%" alt="Enable sshd monitoring"/>
 <br />
 <br />
-Since updating the config and rules we will test the configuration and once successfull will then start the Suricata service:  <br/>
-<img src="https://i.imgur.com/XDrkJK6.png" height="80%" width="80%" alt="Test and start Suricata"/>
+We will also enable nginx monitoring using the same method as before for auth and botsearch, we will not be enabling limit-req:  <br/>
+<img src="https://i.imgur.com/WJgiXFE.png" height="80%" width="80%" alt="Enable nginx monitoring"/>
 <br />
 <br />
-We will then check the status of the service to make sure it has started and running successfully:  <br/>
-<img src="https://i.imgur.com/97rtZ9A.png" height="80%" width="80%" alt="Check status of Suricata"/>
-<br />
-<br />
-We will also check the Suricata log file to confirm that it has successfully started:  <br/>
-<img src="https://i.imgur.com/iWLsXPT.png" height="80%" width="80%" alt="Check status of Suricata"/>
-<br />
-<br />
-Next, we will want to test Suricata to make sure it is detecting malicious traffic:  <br/>
-<img src="https://i.imgur.com/zf1B8tF.png" height="80%" width="80%" alt="Test Suricata"/>
-<br />
-<br />
-We will now check Suricata's fast.log file to see if it detected the malicious test, we can see that it was successfull. Suricata is installed and running successfully!  <br/>
-<img src="https://i.imgur.com/mXPec1E.png" height="80%" width="80%" alt="Test Suricata"/>
+We will then enable, start and check the status of fail2ban to make sure it is running. We have successfully installed, configured and started the fail2ban service!  <br/>
+<img src="https://i.imgur.com/txy8SpV.png" height="80%" width="80%" alt="Enable and start fail2ban"/>
 </p>
 
 <!--
